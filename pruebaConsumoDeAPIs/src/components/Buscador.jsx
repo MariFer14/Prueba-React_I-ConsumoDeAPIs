@@ -1,13 +1,13 @@
 import React from "react";
 import "../assets/css/MiApi.css";
 
-function Buscador({ serchTerm, setSearchTerm }) {
+function Buscador({ searchTerm, setSearchTerm }) {
   return (
     <div>
       <input
         type="text"
         placeholder="Busca por titulo"
-        value={serchTerm}
+        value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
     </div>
