@@ -45,7 +45,7 @@ function MiApi() {
             <div key={uniqueId} className="noticias">
               <div className="card">
                 <img src={noticia.urlToImage} alt={noticia.title} />
-                <button className="btn2">Leer más...</button>
+                <button onClick={() => window.open(noticia.url, "_blank")} className="btn2">Leer más...</button>
                 <h2>{noticia.title}</h2>
                 <h4>{noticia.author}</h4>
                 <p>{noticia.description}</p>

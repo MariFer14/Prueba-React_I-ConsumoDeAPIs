@@ -18,7 +18,7 @@ function App() {
       <main>
         <div className="imagen-principal">
           <div className="contenedor">
-            <h3 className="titulo">Portal De Noticias</h3>
+            <h3 className="titulo">Portal De Noticias Web</h3>
             <p className="descripcion">
               Mantente al día con todos los acontecimientos ocurridos alrededor del mundo.
             </p>
@@ -31,6 +31,11 @@ function App() {
       <div>
         <MiApi/>
       </div>
+
+      <footer>
+        <h3>Maryland-News</h3>
+        <p>©2024 Portal de Noticias Web. Todos los Derechos Reservados.</p>
+      </footer>
     </div>
   );
 }

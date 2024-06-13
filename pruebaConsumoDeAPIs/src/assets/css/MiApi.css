@@ -55,6 +55,7 @@
 .noticias{
     border: 2px solid #102c57;
     border-radius: 1em;
+    background-color: #ffffff;
 }
 
 .card{
@@ -64,20 +65,25 @@
 .card h2{
     margin-bottom: 1em;
     padding: 0 1em;
+    color: #102c57;
+    font-size: 1.1em;
 
 }
 .card h4{
     margin-bottom: 0.09em;
     padding: 0 1em;
+    color: #102c57;
 }
 .card p{
     margin-bottom: 1em;
     padding: 0 1em;
+    color: #ff6969;
 }
 
 .card h6{
     text-align:end;
     padding: 0 1.2em;
+    color: #102c57;
 }
 
 .card img{
