@@ -1,4 +1,5 @@
 import React from "react";
+import "../assets/css/MiApi.css";
 
 function Buscador({ serchTerm, setSearchTerm }) {
   return (

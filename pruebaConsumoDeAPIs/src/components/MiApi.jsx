@@ -31,20 +31,30 @@ function MiApi() {
 
   return (
     <div>
-      <Buscador searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <button onClick={ordenarPorTitulo}>Ordenar por título</button>
-      {filteredNoticias.map((noticia) => {
-        const uniqueId = `${noticia.title}-${noticia.publishedAt}`;
-        return (
-          <div key={uniqueId}>
-            <h2>{noticia.title}</h2>
-            <h4>{noticia.author}</h4>
-            <img src={noticia.urlToImage} alt={noticia.title} />
-            <p>{noticia.description}</p>
-            <h6>{noticia.publishedAt}</h6>
-          </div>
-        );
-      })}
+      <div className="buscador">
+        <button className="btn1" onClick={ordenarPorTitulo}>
+          Ordenar por título
+        </button>
+        <Buscador searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      </div>
+
+      <div className="noticias-container">
+        {filteredNoticias.map((noticia) => {
+          const uniqueId = `${noticia.title}-${noticia.publishedAt}`;
+          return (
+            <div key={uniqueId} className="noticias">
+              <div className="card">
+                <img src={noticia.urlToImage} alt={noticia.title} />
+                <button className="btn2">Leer más...</button>
+                <h2>{noticia.title}</h2>
+                <h4>{noticia.author}</h4>
+                <p>{noticia.description}</p>
+                <h6>{noticia.publishedAt}</h6>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

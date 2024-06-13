@@ -29,7 +29,7 @@ function App() {
       </main>
 
       <div>
-        <MiApi />
+        <MiApi/>
       </div>
     </div>
   );
