@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Buscador from "./Buscador";
+import "../assets/css/MiApi.css";
 
 function MiApi() {
   const [noticias, setNoticias] = useState([]);
