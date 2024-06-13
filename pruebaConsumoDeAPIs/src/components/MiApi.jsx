@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import Buscador from "./Buscador";
 
 function MiApi() {
-    const [noticias, setNoticias] = useState([]);
-    const [searchTerm, setSearchTerm] = useState ("")
+  const [noticias, setNoticias] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     async function baseDatos() {
@@ -16,15 +17,28 @@ function MiApi() {
     baseDatos();
   }, []);
 
+  const filteredNoticias = noticias.filter((noticia) =>
+    noticia.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const ordenarPorTitulo = () => {
+    const noticiasOrdenadas = [...filteredNoticias].sort((a, b) =>
+      a.title.localeCompare(b.title)
+    );
+    setNoticias(noticiasOrdenadas);
+  };
+
   return (
     <div>
-      {noticias.map((noticia) => {
+      <Buscador searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <button onClick={ordenarPorTitulo}>Ordenar por título</button>
+      {filteredNoticias.map((noticia) => {
         const uniqueId = `${noticia.title}-${noticia.publishedAt}`;
         return (
           <div key={uniqueId}>
             <h2>{noticia.title}</h2>
             <h4>{noticia.author}</h4>
-            <img src={noticia.urlToImage} alt={noticia.title}/>
+            <img src={noticia.urlToImage} alt={noticia.title} />
             <p>{noticia.description}</p>
             <h6>{noticia.publishedAt}</h6>
           </div>
